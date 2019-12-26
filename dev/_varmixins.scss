@@ -1,0 +1,27 @@
+// variables
+$good_ind_color: #55b759;
+$good_ind_txt: #e8f5e9;
+$bad_ind_color: #f44336;
+$bad_ind_txt: #fbe9e7;
+$percentage_dark: #f4511e;
+$percentage_light: #ffccbc;
+
+@mixin headerBudgetBars($bg, $txt) {
+  background-color: $bg;
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: $txt;
+}
+
+@mixin table_ui() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin table_title() {
+  text-align: center;
+  padding: 0 0 1rem 0;
+  color: #616161;
+  border-bottom: solid 1px lightgray;
+}

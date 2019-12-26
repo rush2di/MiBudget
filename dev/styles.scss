@@ -1,3 +1,5 @@
+@import "./varmixins";
+
 * {
   margin: 0;
   padding: 0;
@@ -31,24 +33,16 @@ body {
   height: 100%;
   margin: 0 auto;
   .budget_balance {
-    color: white;
+    color: #616161;
     font-size: 30px;
     margin: 0.5rem 0;
   }
   .budget_income {
-    background-color: #55b759;
-    width: 50%;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    color: #e8f5e9;
+    @include headerBudgetBars($good_ind_color, $good_ind_txt);
     margin: 0.5rem 0;
   }
   .budget_expense {
-    width: 50%;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    color: #fbe9e7;
-    background-color: #f44336;
+    @include headerBudgetBars($bad_ind_color, $bad_ind_txt);
   }
   .valpercent {
     display: flex;
@@ -64,7 +58,7 @@ body {
 }
 .header {
   height: 15rem;
-  background-color: gray;
+  background-color: #fafafa;
   width: 100vw;
 }
 
@@ -77,7 +71,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1.7rem 10vw;
-    margin: 0 -10vw;
+    margin: 0 -6vw;
     background-color: #f5f5f5;
     select {
       padding: 0.3rem;
@@ -113,46 +107,35 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5rem;
-  margin-top: 1rem;
-  .income_ui {
+  margin: 1rem;
+}
+
+.income_ui,
+.expense_ui {
+  @include table_ui;
+}
+.income_title,
+.expense_title {
+  @include table_title;
+}
+.list_item {
+  padding: 1rem;
+  border-bottom: solid 1px lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    padding: 0 0.3rem;
+  }
+  #amount {
     display: flex;
-    flex-direction: column;
-  }
-  .income_title {
-    text-align: center;
-    padding: 0 0 1rem 0;
-    border-bottom: solid 1px lightgray;
-  }
-  .list_item {
-    padding: 1rem;
-    border-bottom: solid 1px lightgray;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    div {
-      padding: 0 0.3rem;
-    }
-    #amount {
-      display: flex;
-      #delete_btn {
-        margin-right: -1rem;
-        padding: 0 0.5rem;
-        color: #989898;
-        cursor: pointer;
-      }
+    #delete_btn {
+      margin-right: -1rem;
+      padding: 0 0.5rem;
+      color: #989898;
+      cursor: pointer;
     }
   }
-  // #itemid:first-child {
-  //   padding: 0 0.3rem;
-  // }
-  // #itemid:last-child {
-  //   display: flex;
-  //   #delete_btn {
-  //     margin-right: -1rem;
-  //     padding: 0 0.5rem;
-  //     color: #989898;
-  //     cursor: pointer;
-  //   }
 }
 
 .left {
@@ -162,4 +145,29 @@ body {
 .right {
   float: right;
   margin: 0 0.5rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 70vw;
+  }
+  .user_ui {
+    width: 100vw;
+    .add_val {
+      margin: 0;
+      padding: 1.7rem 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .tables {
+    grid-template-columns: 1fr;
+  }
 }

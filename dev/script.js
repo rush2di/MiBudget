@@ -53,7 +53,7 @@ class UI {
     if (balance > 0) {
       this.budgetBalance.style.color = "#55b759";
     } else if (balance === 0) {
-      this.budgetBalance.style.color = "white";
+      this.budgetBalance.style.color = "#616161";
     } else if (balance < 0) {
       this.budgetBalance.style.color = "#f44336";
     }
