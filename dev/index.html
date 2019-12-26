@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli&display=swap"
+      rel="stylesheet"
+    />
+    <title>Budgetaa</title>
+  </head>
+  <body>
+    <div class="root">
+      <div class="notif"></div>
+      <!-- header section -->
+      <div class="header">
+        <div class="container">
+          <div class="budget_balance">0.00</div>
+          <div class="budget_income">
+            <div class="left">income</div>
+            <div class="right budget_income_value">0.00</div>
+          </div>
+          <div class="budget_expense">
+            <div class="left">expenses</div>
+            <div class="right valpercent">
+              <div class="budget_expenses_value">0.00</div>
+              <div class="budget_expenses_percentage">0%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="user_ui">
+          <!-- user input and value types -->
+          <form class="add_val">
+            <select class="type_select">
+              <option value="inc" selected>income</option>
+              <option value="exp">expense</option>
+            </select>
+            <input
+              type="text"
+              placeholder="add description"
+              class="add_description"
+            />
+            <input type="number" class="add_value" placeholder="amount" />
+            <button type="submit" class="add_btn">
+              add
+            </button>
+          </form>
+          <!-- list of income and expenses -->
+          <div class="tables">
+            <div class="income_ui">
+              <h2 class="income_title">Income</h2>
+              <!-- <div class="income_list"> -->
+                <!-- renders go here -->
+                <!-- <div id="itemid" class="list_item">
+                    <div>job</div>
+                    <div id="amount">
+                      <div class="budget_income_value">500.00</div>
+                      <div id="delete_btn">x</div>
+                    </div>
+                  </div> -->
+              </div>
+              <div class="expense_ui">
+                <h2 class="expense_title">Expenses</h2>
+                <!-- <div class="expense_list"></div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
