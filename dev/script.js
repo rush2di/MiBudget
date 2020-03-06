@@ -159,7 +159,7 @@ let appInit = () => {
     e.preventDefault();
     ui.formSubmit();
   });
-  // delete button handler for newly
+  // delete button handler for newly 
   // added income and expense lists
   tables.addEventListener("click", e => {
     if (e.srcElement.id === "delete_btn") {
